@@ -1,0 +1,114 @@
+$gray6:#6b717f;
+$gray8:#8C8C8C;
+$colorW: #fff;
+$colorP: #BF4080;
+$pad: 10px;
+
+@mixin shadow ($color){
+    
+}
+
+body {
+    font: 100% "Space Mono", monospace;
+    color:$gray6;
+    margin: 0;
+    padding: $pad;
+    background-color: $colorW;
+    overflow-x: hidden;
+}
+
+main {
+    padding: 0 $pad;
+}
+
+article {
+    display: flex;
+    flex-wrap: wrap;
+    section {
+        flex-grow: 1;
+        flex-basis: 45%;
+        border: 1px $gray8 solid;
+        -webkit-box-shadow: 10px 10px 15px -4px $gray6;
+        -moz-box-shadow: 10px 10px 15px -4px $gray6;
+        box-shadow: 10px 10px 15px -4px $gray6;
+        padding: $pad;
+        margin: 16px;
+        clear: both;
+        overflow: auto;
+        box-sizing: border-box;
+    }
+    section#selling-points {
+        flex-grow: 2;
+        flex-basis: 100%;
+    }
+    code {
+        background: #000;
+        border: 1px solid $gray6;
+        color: $gray8;
+        page-break-inside: avoid;
+        font-family: monospace;
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 1.6em;
+        max-width: 100%;
+        overflow: auto;
+        padding: $pad;
+        display: block;
+        word-wrap: break-word;
+    }
+    code.before {
+        float: left;
+        width: 40%;
+    }
+    code.after {
+        float: right;
+        width: 40%;
+    }
+}
+
+h1,
+h2,
+h3 {
+    color: $colorP;
+}
+
+h1 {
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    font-size: 1.5em;
+    padding: $pad;
+    margin-bottom: 0px;
+}
+
+.messages {
+    padding: $pad;
+}
+
+.success {
+    border: 1px solid $gray8;
+    padding: $pad;
+    color: $colorW;
+    background-color: green;
+}
+
+.error {
+    @extend .success;
+    background-color: red;
+    &:hover {
+        background-color: green;
+    }
+}
+
+.warning {
+    @extend .success;
+    background-color: orange;
+}
+
+footer {
+    h3 {
+    padding:2*$pad;
+    } 
+}
